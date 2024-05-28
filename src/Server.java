@@ -57,7 +57,7 @@ public class Server {
             return num2 + "+" + num1 + "= " + (num1 + num2);
 
         } else if (message.contains("-")){
-            String[] parts = message.split("\\*");
+            String[] parts = message.split("\\-");
             int num1 = Integer.parseInt(parts[0]);
             int num2 = Integer.parseInt(parts[1]);
             return num1 + "-" + num2 + "= " + (num1 - num2);
