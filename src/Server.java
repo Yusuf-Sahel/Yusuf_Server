@@ -7,6 +7,7 @@ public class Server {
 
     public static void main(String[] args) throws IOException{
         int port = 1234;
+        //Standarnummer
         if (args.length > 0){
             port = Integer.parseInt(args[0]);
         }
@@ -14,15 +15,15 @@ public class Server {
     MulticastSocket socket = new MulticastSocket(port);
 
 
-    InetAddress groupAdress = Integer.getByName("225.4.5.6");
+    InetAddress groupAddress = InetAddress.getByName("225.4.5.6");
 
-    socket.joinGroup(groupAdress);
+    socket.joinGroup(groupAddress);
         System.out.println("Har gått med i gruppen......");
 
     //Huvuddelen
 
     boolean isActive = true;
-    While (isActive) {
+  while (isActive){
         byte[] buffer = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
         socket.receive(packet);
@@ -31,7 +32,7 @@ public class Server {
             System.out.println(proccessMessage(message));
         }
 
-    socket.leaveGroup(groupAdress);
+    socket.leaveGroup(groupAddress);
     socket.close();
     }
 
