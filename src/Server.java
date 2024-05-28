@@ -61,6 +61,8 @@ public class Server {
             int num2 = Integer.parseInt(parts[1]);
             return num2 + "-" + num1 + "= " + (num2 - num1);
         }
+
+        return "fel meddelande";
     }
 
 }
