@@ -29,14 +29,14 @@ public class Server {
         socket.receive(packet);
         String message = new String(packet.getData(),0,packet.getLength()).trim();
 
-            System.out.println(proccesMessage(message));
+            System.out.println(proccessMessage(message));
         }
 
     socket.leaveGroup(groupAddress);
     socket.close();
     }
 
-    public static String proccesMessage(String message){
+    public static String proccessMessage(String message){
 
         if(message.contains("*")) {
             String[] parts = message.split("\\*");
@@ -51,7 +51,7 @@ public class Server {
             return num1 + "/" + num2 + "= " + (num1 / num2);
 
         } else if (message.contains("+")){
-            String[] parts = message.split("\\*");
+            String[] parts = message.split("\\+");
             int num1 = Integer.parseInt(parts[0]);
             int num2 = Integer.parseInt(parts[1]);
             return num2 + "+" + num1 + "= " + (num1 + num2);
