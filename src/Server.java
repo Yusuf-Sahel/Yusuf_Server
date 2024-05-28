@@ -31,6 +31,9 @@ public class Server {
             System.out.println(proccessMessage(message));
         }
 
-
+socket.leaveGroup(groupAdress);
+    socket.close();
     }
+
+
 }
