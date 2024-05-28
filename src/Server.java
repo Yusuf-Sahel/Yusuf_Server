@@ -31,9 +31,36 @@ public class Server {
             System.out.println(proccessMessage(message));
         }
 
-socket.leaveGroup(groupAdress);
+    socket.leaveGroup(groupAdress);
     socket.close();
     }
 
+    public static String proccessMessage(String message){
+
+        if(message.contains("*")) {
+            String[] parts = message.split("\\*");
+            int num1 = Integer.parseInt(parts[0]);
+            int num2 = Integer.parseInt(parts[1]);
+            return num2 + "*" + num1 + "= " + (num2 * num1);
+
+        } else if (message.contains("/")){
+            String[] parts = message.split("\\*");
+            int num1 = Integer.parseInt(parts[0]);
+            int num2 = Integer.parseInt(parts[1]);
+            return num2 + "/" + num1 + "= " + (num2 / num1);
+
+        } else if (message.contains("+")){
+            String[] parts = message.split("\\*");
+            int num1 = Integer.parseInt(parts[0]);
+            int num2 = Integer.parseInt(parts[1]);
+            return num2 + "+" + num1 + "= " + (num2 + num1);
+
+        } else if (message.contains("-")){
+            String[] parts = message.split("\\*");
+            int num1 = Integer.parseInt(parts[0]);
+            int num2 = Integer.parseInt(parts[1]);
+            return num2 + "-" + num1 + "= " + (num2 - num1);
+        }
+    }
 
 }
