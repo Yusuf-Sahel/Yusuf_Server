@@ -12,5 +12,19 @@ public class Server {
         }
 
     MulticastSocket socket = new MulticastSocket(port);
+
+
+    InetAddress groupAdress = Integer.getByName("225.4.5.6");
+
+
+    //Huvuddelen
+
+    boolean isActive = true;
+    While (isActive) {
+        byte[] buffer = new byte[1024];
+        DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+        String message = new String(packet.getData(),0,packet.getLength()).trim();
+
+        }
     }
 }
